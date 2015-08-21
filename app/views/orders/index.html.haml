@@ -3,18 +3,21 @@
 %table
   %thead
     %tr
-      %th Cart
-      %th User
+      %th Order
+      %th Books
       %th State
       %th{:colspan => "3"}
   %tbody
-    - @orders.each do |order|
+    - @orders.each_with_index do |order, i|
       %tr
-        %td= order.cart
-        %td= order.user
+        %td= i
+        %td
+          - order.cart.books.each do |book|
+            = book.title
+            -
+            = book.author
+            %br
         %td= order.state
         %td= link_to 'Show', order
-        %td= link_to 'Edit', edit_order_path(order)
         %td= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Order', new_order_path
