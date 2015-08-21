@@ -8,14 +8,6 @@
     = csrf_meta_tags
   %body
     = render 'shared/navbar'
-    - if notice
-      .alert.alert-dismissable.alert-info
-        %button.close{ type: 'button', data: { dismiss: 'close'} } x
-        = notice
-    - if alert
-      .alert.alert-dismissable.alert-danger
-        %button.close{ type: 'button', data: { dismiss: 'close'} } x
-        Placeholder for now
-        = alert
+    = render 'shared/notifications'
     .container
       = yield

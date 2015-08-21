@@ -1,21 +1,30 @@
-.panel.panel-info
+.panel.panel-material-light-green
   .panel-heading
     %h3.panel-title
       - if user_signed_in?
-        Your cart (
+        Your shelf (
         = current_user.cart.books.size
         )
+      - else
+        Your shelf
   .panel-body
-    .list-group
-      - 4.times do
+    - unless user_signed_in?
+      .text-center
+        .alert.alert-info.no-bottom-margin Login if you want to add books to your shelf.
+    - else
+      .list-group
         .list-group-item
           .row-picture
             %img.circle{ src: 'http://lorempixel.com/40/40' }
           .row-content
             %h4.list-group-item-heading Book title
             %p.list-group-item-text Description
-
         .list-group-separator
-
-      .sidebar__cart__buttons
-        %button.btn.btn-success Order now
+  .panel-footer
+    .sidebar__cart__buttons
+      - if user_signed_in?
+        %button.btn.btn-material-light-blue{ class: ("disabled" unless current_user.cart.books.size > 0) }
+          Order now
+      - else
+        = link_to 'Log in', new_user_session_path, class: 'btn btn-small btn-default btn-flat'
+        = link_to 'Sign up', new_user_registration_path, class: 'btn btn-small btn-default btn-flat'
