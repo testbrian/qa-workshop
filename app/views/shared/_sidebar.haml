@@ -9,15 +9,19 @@
         Your shelf
   .panel-body
     - if user_signed_in?
-      .list-group.js-book-row
-        - current_user.cart.books.each do |book|
-          .list-group-item
-            .row-picture
-              = image_tag book.cover, class: 'circle'
-            .row-content
-              %h4.list-group-item-heading= book.title
-              = link_to 'X', remove_book_cart_path(book), class: 'js-remove-book', method: :post
-          .list-group-separator
+      - if current_user.cart.books.size > 0
+        .list-group.js-book-row
+          - current_user.cart.books.each do |book|
+            .list-group-item
+              .row-picture
+                = image_tag book.cover, class: 'circle'
+              .row-content
+                %h4.list-group-item-heading= book.title
+                = link_to 'X', remove_book_cart_path(book), class: 'js-remove-book', method: :post
+            - unless current_user.cart.books.size < 2
+              .list-group-separator
+      - else
+        Add some books to your shelf.
     - else
       .text-center
         .alert.alert-info.no-bottom-margin Login if you want to add books to your shelf.

@@ -10,7 +10,10 @@
           = book.short_description
       .panel-footer.text-center
         - if current_user.try(:cart)
-          = link_to 'Add to shelf', add_book_cart_path(current_user.cart, book_id: book.id), method: :post,
-          class: 'btn btn-success'
+          - if book.status
+            = link_to 'Add to shelf', add_book_cart_path(current_user.cart, book_id: book.id), method: :post,
+            class: 'btn btn-success'
+          - else
+            %button.btn.btn-warning.disabled
         - else
           %button.btn.btn-danger Sign in

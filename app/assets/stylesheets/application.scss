@@ -12,11 +12,11 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap-material-design
  */
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'bootstrap-material-design';
 
 @import 'utilities/functions';
 

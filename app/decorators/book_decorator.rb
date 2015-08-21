@@ -2,7 +2,7 @@ class BookDecorator < Draper::Decorator
   delegate_all
 
   def status
-    available_quantity.zero? ? 'Borrowed' : 'Available'
+    available_quantity.zero? ? false : true
   end
 
   def available_quantity
