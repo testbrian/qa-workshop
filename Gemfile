@@ -4,6 +4,7 @@ ruby '2.2.1'
 gem 'rails', '4.2.3'
 gem 'pg'
 
+gem 'asin'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'decent_exposure'

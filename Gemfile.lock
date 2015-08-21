@@ -38,6 +38,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.7)
     arel (6.0.3)
+    asin (2.0.1)
+      confiture (>= 0.1)
+      crack (>= 0.3)
+      hashie (>= 1.1)
+      httpi (>= 0.9)
+      rash (>= 0.4)
     autoprefixer-rails (5.1.7.1)
       execjs
       json
@@ -82,6 +88,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    confiture (0.1.4)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     database_cleaner (1.4.1)
     decent_exposure (2.3.2)
     devise (3.5.1)
@@ -134,8 +143,11 @@ GEM
       multi_json (~> 1.8)
     haml (4.0.6)
       tilt
+    hashie (2.0.5)
     hitimes (1.2.2)
     http_parser.rb (0.6.0)
+    httpi (2.4.1)
+      rack
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -239,6 +251,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    rash (0.4.0)
+      hashie (~> 2.0.0)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -327,6 +341,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asin
   better_errors
   bootstrap-material-design
   bootstrap-sass
