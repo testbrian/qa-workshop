@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/testbrian/qa-workshop/badges/gpa.svg)](https://codeclimate.com/github/testbrian/qa-workshop)
 ## A Workshops App
 
 This app is a simple library system which has some bugs.
