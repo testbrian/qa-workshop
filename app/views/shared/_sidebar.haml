@@ -8,10 +8,7 @@
       - else
         Your shelf
   .panel-body
-    - unless user_signed_in?
-      .text-center
-        .alert.alert-info.no-bottom-margin Login if you want to add books to your shelf.
-    - else
+    - if user_signed_in?
       .list-group
         - current_user.cart.books.each do |book|
           .list-group-item
@@ -20,10 +17,13 @@
             .row-content
               %h4.list-group-item-heading= book.title
           .list-group-separator
+    - else
+      .text-center
+        .alert.alert-info.no-bottom-margin Login if you want to add books to your shelf.
   .panel-footer
     .sidebar__cart__buttons
       - if user_signed_in?
-        %button.btn.btn-material-light-blue{ class: ("disabled" unless current_user.cart.books.size > 0) }
+        %button.btn.btn-material-light-blue{ class: ('disabled' unless current_user.cart.books.size > 0) }
           Order now
       - else
         = link_to 'Log in', new_user_session_path, class: 'btn btn-small btn-default btn-flat'
