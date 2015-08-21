@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
   private
 
   def create_cart_if_needed
-    create_cart if cart.nil?
+    carts.create if cart.nil?
   end
 end
