@@ -1,0 +1,22 @@
+%h4 Administration
+
+%table
+  %tr
+    %th Order
+    %th Books
+    %th State
+    %th User
+    %th{:colspan => "3"}
+  - orders.each do |order|
+    %tr
+      %td= order.id
+      %td
+        - order.cart.books.each do |book|
+          = book.title
+          -
+          = book.author
+          %br
+      %td= order.state
+      %td= order.user.email
+      %td= link_to 'Return', '#', class: 'btn btn-primary'
+
