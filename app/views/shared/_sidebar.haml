@@ -1,6 +1,10 @@
 .panel.panel-info
   .panel-heading
-    %h3.panel-title Your cart
+    %h3.panel-title
+      - if user_signed_in?
+        Your cart (
+        = current_user.cart.books.size
+        )
   .panel-body
     .list-group
       .list-group-item
