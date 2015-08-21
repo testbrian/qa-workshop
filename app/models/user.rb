@@ -4,10 +4,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
 
-  has_one :cart, dependent: :destroy
+  has_many :carts, dependent: :destroy
   has_many :orders
 
+  def cart
+    carts.last
+  end
+
   private
+
   def create_cart_if_needed
     create_cart if cart.nil?
   end

@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
   def create
     cart = Cart.find(params[:id])
     @order = Order.new(cart: cart, user: current_user)
+    current_user.carts.create
 
     respond_to do |format|
       if @order.save
