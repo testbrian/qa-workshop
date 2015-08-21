@@ -6,4 +6,7 @@
       = image_tag(book.cover, class: 'book__cover')
       .book__description= book.description
     .panel-footer.text-center
-      %button.btn.btn-success.btn-small Add to shelf
+      - if current_user.try(:cart)
+        %button.btn.btn-success.btn-small= link_to 'Add to shelf', add_book_cart_path(current_user.cart, book_id: book.id), method: :post
+      - else
+        %button.btn.btn-danger.btn-small Sign in

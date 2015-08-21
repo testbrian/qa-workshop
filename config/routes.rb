@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   root 'home#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  resources :carts, only: [:index]
+  resources :carts, only: [:index] do
+    post 'add_book', on: :member
+  end
+
+  resources :contact_requests, only: [:new, :create]
 end
