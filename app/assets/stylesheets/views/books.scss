@@ -1,5 +1,14 @@
 $light-gray: #fefefe;
 
+.books {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+    overflow: auto;
+  }
+}
+
 .book {
   float: left;
   width: 31.33%;
