@@ -1,7 +1,9 @@
 %h1 Contact us!
-
-=simple_form_for(contact_request) do |f|
-  =f.input :text, as: :text
-  =f.button :submit
-
-= link_to 'Show more', '/contact_requests/show_more'
+%p Feel free to contact us using the form below. We'll respond as soon as possible.
+.row
+  .col-sm-5
+    = simple_form_for(contact_request, html: { class: 'form-vertical' }) do |f|
+      = f.input :text, as: :text, label: 'Your message', placeholder: 'Place your message here',
+        input_html: { rows: 7 }
+      = f.button :submit, 'Submit', class: 'btn btn-success'
+      = link_to 'Show more', '/contact_requests/show_more', class: 'btn btn-default'
