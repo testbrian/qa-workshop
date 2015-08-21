@@ -9,13 +9,14 @@
         Your shelf
   .panel-body
     - if user_signed_in?
-      .list-group
+      .list-group.js-book-row
         - current_user.cart.books.each do |book|
           .list-group-item
             .row-picture
               = image_tag book.cover, class: 'circle'
             .row-content
               %h4.list-group-item-heading= book.title
+              = link_to 'X', remove_book_cart_path(book), class: 'js-remove-book', method: :post
           .list-group-separator
     - else
       .text-center
