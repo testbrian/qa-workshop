@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :contact_requests, only: [:new, :create]
-  resources :orders
+  resources :orders do
+    post 'collect', on: :member
+    post 'return', on: :member
+  end
 end
