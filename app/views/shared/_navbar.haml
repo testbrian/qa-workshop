@@ -1,0 +1,14 @@
+.navbar.navbar-inverse
+  .navbar-header
+    %button.navbar-toggle{ type: 'button', data: { toggle: 'collapse', target: '.navbar-inverse-collapse' } }
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand QA Workshops App
+  .navbar-collapse.collapse.navbar-responsive-collapse
+    %ul.nav.navbar-nav
+      %li= link_to 'Home', '#'
+      %li= link_to 'Search', '#'
+      %li= link_to 'Cart', '#'
+    %ul.nav.navbar-nav.navbar-right
+      %li= link_to 'Admin', '#'
