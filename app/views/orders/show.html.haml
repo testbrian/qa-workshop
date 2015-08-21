@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Cart:
+  = @order.cart
+%p
+  %strong User:
+  = @order.user
+%p
+  %strong State:
+  = @order.state
+= link_to 'Edit', edit_order_path(@order)
+|
+= link_to 'Back', orders_path

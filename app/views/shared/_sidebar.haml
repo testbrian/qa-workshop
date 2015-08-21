@@ -24,8 +24,10 @@
   .panel-footer
     .sidebar__cart__buttons
       - if user_signed_in?
-        %button.btn.btn-material-light-blue{ class: ('disabled' unless current_user.cart.books.size > 0) }
-          Order now
+        = link_to 'Order now',
+          orders_path(id: current_user.cart.id),
+          class: "#{current_user.cart.books.size > 0 ? '' : 'disabled'} btn btn-material-light-blue",
+          method: :post
       - else
         = link_to 'Log in', new_user_session_path, class: 'btn btn-small btn-default btn-flat'
         = link_to 'Sign up', new_user_registration_path, class: 'btn btn-small btn-default btn-flat'
