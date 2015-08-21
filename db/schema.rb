@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821102829) do
+ActiveRecord::Schema.define(version: 20150821103255) do
 
   create_table "book_categories", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 20150821102829) do
     t.string  "publishing_house"
     t.date    "published_at"
     t.integer "quantity",         default: 1
+    t.integer "book_category_id"
   end
+
+  add_index "books", ["book_category_id"], name: "index_books_on_book_category_id"
 
 end
