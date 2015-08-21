@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify :role_cname => 'Admin'
   after_save :create_cart_if_needed
 
   devise :database_authenticatable, :registerable,
@@ -9,6 +10,10 @@ class User < ActiveRecord::Base
 
   def cart
     carts.last
+  end
+
+  def admin?
+    has_role? :admin
   end
 
   private
