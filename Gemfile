@@ -29,6 +29,7 @@ end
 group :development, :test do
   gem 'better_errors'
   gem 'byebug'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'poltergeist'
   gem 'rspec-rails'
