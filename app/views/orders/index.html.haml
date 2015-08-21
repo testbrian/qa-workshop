@@ -1,23 +1,21 @@
 %p#notice= notice
-%h1 Listing Orders
+%h1 Orders History
 %table.table.table-striped.table-hover
   %thead
     %tr
-      %th Order
+      %th.text-center Order
       %th Books
-      %th State
-      %th{:colspan => "3"}
+      %th
   %tbody
     - @orders.each_with_index do |order, i|
       %tr
-        %td= i
-        %td
+        %td.vertical-align.text-center= i
+        %td.vertical-align
           - order.cart.books.each do |book|
-            = book.title
-            -
-            = book.author
+            #{book.author} - #{book.title}
             %br
-        %td= order.state
-        %td= link_to 'Show', order
-        %td= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }
+        %td.text-right.vertical-align
+          = link_to 'Show', order, class: 'btn btn-success btn-sm'
+          = link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' },
+          class: 'btn btn-danger btn-sm'
 %br/

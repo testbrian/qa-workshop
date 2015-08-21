@@ -1,10 +1,17 @@
-%p
-  %strong Books:
-  - @order.cart.books.each do |book|
-    %p= book.title
-%p
-  %strong State:
-  = @order.state
-= link_to 'Edit', edit_order_path(@order)
-|
-= link_to 'Back', orders_path
+%h1 Order ID: #{@order.id}
+%table.table.table-hover.table-striped
+  %thead
+    %tr
+      %th Author
+      %th Book title
+      %th Publishing house
+  %tbody
+    - @order.cart.books.each do |book|
+      %tr
+        %td= book.title
+        %td= book.author
+        %td= book.publishing_house
+
+.text-center
+  = link_to 'Edit', edit_order_path(@order), class: 'btn btn-success'
+  = link_to 'Back', orders_path, class: 'btn btn-material-grey'
