@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'state_machine'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'uglifier', '>= 1.3.0'
+gem 'bootstrap-material-design'
 
 group :production do
   gem 'rails_12factor'
@@ -36,6 +37,8 @@ group :development, :test do
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'spring'
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem 'rack-livereload'
 end
 
 group :test do
