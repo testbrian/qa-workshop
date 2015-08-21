@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+%w(
+  0618640150 0451524934
+  1501100076 1501111671
+  1784351164 0786915897
+  0062429973 0804169209
+).each do |isbn|
+  AmazonApiServices::FetchBook.call(isbn: isbn)
+end
