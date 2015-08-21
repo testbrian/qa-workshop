@@ -13,13 +13,13 @@
         .alert.alert-info.no-bottom-margin Login if you want to add books to your shelf.
     - else
       .list-group
-        .list-group-item
-          .row-picture
-            %img.circle{ src: 'http://lorempixel.com/40/40' }
-          .row-content
-            %h4.list-group-item-heading Book title
-            %p.list-group-item-text Description
-        .list-group-separator
+        - current_user.cart.books.each do |book|
+          .list-group-item
+            .row-picture
+              = image_tag book.cover, class: 'circle'
+            .row-content
+              %h4.list-group-item-heading= book.title
+          .list-group-separator
   .panel-footer
     .sidebar__cart__buttons
       - if user_signed_in?
