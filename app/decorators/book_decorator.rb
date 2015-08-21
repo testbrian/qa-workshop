@@ -2,7 +2,7 @@ class BookDecorator < Draper::Decorator
   delegate_all
 
   def status
-    if available_quantity == 1 || user_already_has_this_book?
+    if available_quantity < 1 || user_already_has_this_book?
       false
     else
       true
