@@ -6,6 +6,11 @@
 # ).each do |isbn|
 #   AmazonApiServices::FetchBook.call(isbn: isbn)
 # end
+librarian = User.first_or_create(
+  email: 'admin@example.com',
+  password: 'password'
+)
+librarian.add_role :admin
 
 arr = [
  {
@@ -98,10 +103,10 @@ arr = [
   "borrowed_quantity"=>0}
 ]
 
-fiction = BookCategory.create(name: 'Fiction')
-fantasy = BookCategory.create(name: 'Fantasy')
-horror = BookCategory.create(name: 'Horror')
+fiction = BookCategory.first_or_create(name: 'Fiction')
+fantasy = BookCategory.first_or_create(name: 'Fantasy')
+horror = BookCategory.first_or_create(name: 'Horror')
 categories = [fiction, fantasy, horror]
 arr.each do |attrs|
-  book  = Book.create(attrs.merge(book_category: categories.sample))
+  book  = Book.first_or_create(attrs.merge(book_category: categories.sample))
 end
