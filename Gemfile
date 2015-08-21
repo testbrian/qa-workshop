@@ -35,7 +35,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'sqlite3'
-  gem 'poltergeist'
   gem 'rspec-rails'
   gem 'spring'
   gem 'guard-livereload', '~> 2.4', require: false
