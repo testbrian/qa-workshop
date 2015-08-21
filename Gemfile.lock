@@ -62,6 +62,11 @@ GEM
     capybara-screenshot (1.0.9)
       capybara (>= 1.0, < 3)
       launchy
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     childprocess (0.5.5)
@@ -327,6 +332,7 @@ DEPENDENCIES
   byebug
   capybara
   capybara-screenshot
+  carrierwave
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   database_cleaner

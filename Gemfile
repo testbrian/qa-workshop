@@ -24,6 +24,7 @@ gem 'state_machine'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-material-design'
+gem 'carrierwave'
 
 group :production do
   gem 'rails_12factor'
