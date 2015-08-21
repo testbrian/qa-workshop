@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20150821165720) do
   create_table "orders", force: :cascade do |t|
     t.integer  "cart_id"
     t.integer  "user_id"
-    t.string   "state"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "state",      default: "awaiting_collection"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.boolean  "returned",   default: false
   end
 
