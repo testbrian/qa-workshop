@@ -1,21 +1,24 @@
 %h4 Administration
 
-%table
+%table.table.table-hover.table-striped
   %tr
-    %th Order
-    %th Books
+    %th.text-center Order
+    %th Client
+    %th Borrowed books
     %th State
-    %th User
-    %th{:colspan => "3"}
+    %th Actions
   - orders.each do |order|
     %tr
-      %td= order.id
+      %td.text-center= order.id
+      %td= order.user.email
       %td
         - order.cart.books.each do |book|
-          = book.title
-          -
-          = book.author
+          #{book.author} - #{book.title}
           %br
-      %td= order.state
-      %td= order.user.email
+      %td
+        - if order.state
+          .btn.btn-xs.btn-info= order.state
+        - else
+          .btn.btn-xs.btn-warning= 'No status'
+
       %td= order.librarian_action(order)

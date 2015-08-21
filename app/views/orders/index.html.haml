@@ -5,17 +5,23 @@
     %tr
       %th.text-center Order
       %th Books
+      %th Status
       %th
   %tbody
     - @orders.each_with_index do |order, i|
       %tr
-        %td.vertical-align.text-center= i
-        %td.vertical-align
+        %td.text-center= i
+        %td
           - order.cart.books.each do |book|
             #{book.author} - #{book.title}
             %br
-        %td.text-right.vertical-align
-          = link_to 'Show', order, class: 'btn btn-success btn-sm'
+        %td
+          - if order.state
+            .btn.btn-xs.btn-info= order.state
+          - else
+            .btn.btn-xs.btn-warning= 'No status'
+        %td.text-right
+          = link_to 'Show', order, class: 'btn btn-success btn-xs'
           = link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' },
-          class: 'btn btn-danger btn-sm'
+          class: 'btn btn-danger btn-xs'
 %br/
