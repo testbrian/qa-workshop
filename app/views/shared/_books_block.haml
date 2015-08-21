@@ -9,7 +9,12 @@
           %h4.book__title= book.title
           = book.short_description
       .panel-footer.text-center
-        = "Books left: #{ book.available_quantity }"
+        - if book.available_quantity < 1
+          .label.label-danger Books available: #{book.available_quantity}
+        - elsif book.available_quantity < 3
+          .label.label-warning Books available: #{book.available_quantity}
+        - elsif book.available_quantity >= 3
+          .label.label-warning Books available: #{book.available_quantity}
         - if current_user.try(:cart)
           - if book.status
             = link_to 'Add to shelf', add_book_cart_path(current_user.cart, book_id: book.id), method: :post,
