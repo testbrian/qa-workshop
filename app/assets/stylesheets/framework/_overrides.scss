@@ -1,8 +1,9 @@
 .list-group {
   .list-group-item {
     .list-group-item-heading {
-      // font-size: 14px;
-      // line-height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }

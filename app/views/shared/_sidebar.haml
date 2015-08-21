@@ -2,7 +2,7 @@
   .panel-heading
     %h3.panel-title
       - if user_signed_in?
-        Your shelf (
+        Your bookshelf (
         = current_user.cart.books.size
         )
       - else
@@ -17,7 +17,8 @@
                 = image_tag book.cover, class: 'circle'
               .row-content
                 %h4.list-group-item-heading= book.title
-                = link_to 'X', remove_book_cart_path(book), class: 'js-remove-book', method: :post
+                = link_to 'Remove from bookshelf', remove_book_cart_path(book),
+                  class: 'btn btn-sm btn-danger js-remove-book', method: :post
             - unless current_user.cart.books.size < 2
               .list-group-separator
       - else
