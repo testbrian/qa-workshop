@@ -179,6 +179,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.3)
+      pry (>= 0.9.10)
     rack (1.6.4)
     rack-livereload (0.3.16)
       rack
@@ -341,6 +343,7 @@ DEPENDENCIES
   kaminari
   pg
   poltergeist
+  pry-rails
   rack-livereload
   rails (= 4.2.3)
   rails_12factor

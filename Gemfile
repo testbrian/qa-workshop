@@ -30,6 +30,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'better_errors'
   gem 'byebug'
   gem 'dotenv-rails'
