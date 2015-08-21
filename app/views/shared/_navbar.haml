@@ -20,7 +20,8 @@
             .navbar__greeting
               Hi, #{current_user.email}
           %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+          - if current_user.try :admin?
+            %li= link_to 'Admin', admin_index_url
         - else
           %li= link_to 'Sign up', new_user_registration_path
           %li= link_to 'Sign in', new_user_session_path
-        -# %li= link_to 'Admin', rails_admin_path
