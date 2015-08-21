@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.1'
 gem 'rails', '4.2.3'
-gem 'sqlite3'
+gem 'pg'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
@@ -23,7 +23,8 @@ gem 'state_machine'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'uglifier', '>= 1.3.0'
 
-group :test do
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development, :test do
@@ -31,6 +32,7 @@ group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'spring'
