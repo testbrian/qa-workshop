@@ -98,7 +98,10 @@ arr = [
   "borrowed_quantity"=>0}
 ]
 
-category = BookCategory.create(name: 'Fiction')
+fiction = BookCategory.create(name: 'Fiction')
+fantasy = BookCategory.create(name: 'Fantasy')
+horror = BookCategory.create(name: 'Horror')
+categories = [fiction, fantasy, horror]
 arr.each do |attrs|
-  book  = Book.create(attrs.merge(book_category: category))
+  book  = Book.create(attrs.merge(book_category: categories.sample))
 end
