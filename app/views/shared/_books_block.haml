@@ -1,12 +1,16 @@
-- books.each do |book|
-  .book.panel.panel-material-light-green
-    .panel-heading
-      %h3.panel-title.book__title= book.title
-    .panel-body
-      = image_tag(book.cover, class: 'book__cover')
-      .book__description= book.description
-    .panel-footer.text-center
+- if books.length < 1
+  .alert.alert-info There aren't any books available right now. Please, check again later.
+- else
+  - books.each do |book|
+    .book.panel.panel-material-light-green
+      .panel-body
+        .book__cover{ style: "background-image: url(#{book.cover});" }
+        .book__description
+          %h4.book__title= book.title
+          = book.short_description
+      .panel-footer.text-center
       - if current_user.try(:cart)
-        %button.btn.btn-success.btn-small= link_to 'Add to shelf', add_book_cart_path(current_user.cart, book_id: book.id), method: :post
+        %button.btn.btn-success.btn-small= link_to 'Add to shelf',
+        add_book_cart_path(current_user.cart, book_id: book.id), method: :post
       - else
         %button.btn.btn-danger.btn-small Sign in

@@ -8,4 +8,8 @@ class BookDecorator < Draper::Decorator
   def available_quantity
     quantity - borrowed_quantity
   end
+
+  def short_description
+    h.truncate(h.strip_tags(description), length: 255, separator: ' ')
+  end
 end

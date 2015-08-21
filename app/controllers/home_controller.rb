@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  expose(:books)
+  expose_decorated(:books)
   def index
   end
 end

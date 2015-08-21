@@ -15,11 +15,10 @@
  *= require bootstrap-material-design
  */
 
-@import 'utilities/functions';
-@import 'utilities/typography';
-
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+@import 'utilities/functions';
 
 @import 'framework/overrides';
 
