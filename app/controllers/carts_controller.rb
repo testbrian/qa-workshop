@@ -4,11 +4,13 @@ class CartsController < ApplicationController
   expose(:book)
 
   def add_book
+    book.update(borrowed_quantity: book.borrowed_quantity + 1)
     current_user.cart.books << book
     redirect_to root_path, notice: 'Book removed from cart!'
   end
 
   def remove_book
+    book.update(borrowed_quantity: book.borrowed_quantity - 1)
     current_user.cart.remove_book(book)
     head :ok
   end
