@@ -1,3 +1,3 @@
 class AdminController < ApplicationController
-  expose(:orders)
+  expose_decorated(:orders)
 end
