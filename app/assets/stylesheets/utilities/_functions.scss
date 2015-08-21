@@ -1,0 +1,43 @@
+$spacer:  (0, no),
+          (6px, xs),
+          (12px, sm),
+          (30px, md),
+          (40px, lg),
+          (50px, xl);
+
+@each $val in $spacer {
+  $size: nth($val, 1) !important;
+  $name: nth($val, 2);
+
+  .#{$name}-top-margin {
+    margin-top: $size;
+  }
+
+  .#{$name}-bottom-margin {
+    margin-bottom: $size;
+  }
+
+  .#{$name}-left-margin {
+    margin-left: $size;
+  }
+
+  .#{$name}-right-margin {
+    margin-right: $size;
+  }
+
+  .#{$name}-top-padding {
+    padding-top: $size;
+  }
+
+  .#{$name}-bottom-padding {
+    padding-bottom: $size;
+  }
+
+  .#{$name}-left-padding {
+    padding-left: $size;
+  }
+
+  .#{$name}-right-padding {
+    padding-right: $size;
+  }
+}

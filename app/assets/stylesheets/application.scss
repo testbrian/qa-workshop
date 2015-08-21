@@ -15,6 +15,11 @@
  *= require bootstrap-material-design
  */
 
- @import 'bootstrap-sprockets';
- @import 'bootstrap';
- @import 'books'
+@import 'utilities/functions';
+@import 'utilities/typography';
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import 'views/books';
+@import 'views/sidebar';

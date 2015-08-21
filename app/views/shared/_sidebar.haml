@@ -7,20 +7,15 @@
         )
   .panel-body
     .list-group
-      .list-group-item
-        .row-picture
-          %img.circle{ src: 'http://lorempixel.com/40/40' }
-        .row-content
-          %h4.list-group-item-heading Book title
-          %p.list-group-item-text Description
+      - 4.times do
+        .list-group-item
+          .row-picture
+            %img.circle{ src: 'http://lorempixel.com/40/40' }
+          .row-content
+            %h4.list-group-item-heading Book title
+            %p.list-group-item-text Description
 
-      .list-group-separator
+        .list-group-separator
 
-      .list-group-item
-        .row-picture
-          %img.circle{ src: 'http://lorempixel.com/40/40' }
-        .row-content
-          %h4.list-group-item-heading Book title
-          %p.list-group-item-text Description
-    .sidebar__cart__buttons
-      %button.btn.btn-success Order now
+      .sidebar__cart__buttons
+        %button.btn.btn-success Order now

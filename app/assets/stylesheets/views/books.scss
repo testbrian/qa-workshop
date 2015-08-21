@@ -1,6 +1,11 @@
 .book {
-  &__name {
+  float: left;
+  width: 23%;
+  margin: 1%;
+
+  &__title {
     text-align: center;
+    font-weight: 700;
   }
 
   &__cover {
@@ -9,6 +14,6 @@
   }
 
   &__description {
-
+    margin-top: 10px;
   }
 }

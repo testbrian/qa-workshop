@@ -1,16 +1,9 @@
-.row
-  .col-sm-4.col-md-3
-    .book
-      %h3.book__name Book title
+- 6.times do
+  .book.panel.panel-default
+    .panel-heading
+      %h3.panel-title.book__title Book title
+    .panel-body
       = image_tag('http://lorempixel.com/200/200', class: 'book__cover')
       .book__description Some description
-  .col-sm-4.col-md-3
-    .book
-      %h3.book__name Book title
-      = image_tag('http://lorempixel.com/200/200', class: 'book__cover')
-      .book__description Some description
-  .col-sm-4.col-md-3
-    .book
-      %h3.book__name Book title
-      = image_tag('http://lorempixel.com/200/200', class: 'book__cover')
-      .book__description Some description
+    .panel-footer.text-center
+      %button.btn.btn-success Order
