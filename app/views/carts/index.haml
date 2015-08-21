@@ -1,4 +1,8 @@
-%h1 My cart
+%h1
+  My cart (
+  =current_user.cart.books.size
+  )
 
-- cart.books.each do |book|
+
+- current_user.cart.books.each do |book|
   = render book

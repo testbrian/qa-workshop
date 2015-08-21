@@ -10,7 +10,7 @@
       %ul.nav.navbar-nav
         %li= link_to 'Home', '#'
         %li= link_to 'Search', '#'
-        %li= link_to 'Cart', '#'
+        %li= link_to 'Cart', carts_path
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li

@@ -1,3 +1,4 @@
 class CartsController < ApplicationController
-  expose(:cart) { current_user.cart }
+  before_action :authenticate_user!
+
 end
