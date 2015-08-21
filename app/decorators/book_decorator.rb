@@ -2,15 +2,15 @@ class BookDecorator < Draper::Decorator
   delegate_all
 
   def status
-    if available_quantity == 1 || user_already_have_such_category_in_cart?
+    if available_quantity == 1 || user_already_has_this_book?
       false
     else
       true
     end
   end
 
-  def user_already_have_such_category_in_cart?
-    h.current_user.cart.books.map { |book| book.book_category }.include?(book_category)
+  def user_already_has_this_book?
+    h.current_user.carts.last.books.include?(object)
   end
 
   def available_quantity
