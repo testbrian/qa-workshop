@@ -16,7 +16,7 @@ arr = [
   "cover"=>'http://ecx.images-amazon.com/images/I/31twj9hz1kL.jpg',
   "publishing_house"=>"Signet Classic",
   "published_at"=>Time.parse("Sat, 01 Jul 1950"),
-  "quantity"=>1,
+  "quantity"=>4,
   "book_category_id"=>1,
   "borrowed_quantity"=>0},
  {
@@ -27,7 +27,7 @@ arr = [
   "cover"=>'http://ecx.images-amazon.com/images/I/515EOHP5KfL.jpg',
   "publishing_house"=>"Scribner",
   "published_at"=>Time.parse("Tue, 02 Jun 2015"),
-  "quantity"=>1,
+  "quantity"=>3,
   "book_category_id"=>1,
   "borrowed_quantity"=>0},
  {
@@ -49,7 +49,7 @@ arr = [
   "cover"=>'http://ecx.images-amazon.com/images/I/51Ny3ySvTuL.jpg',
   "publishing_house"=>"Scribner",
   "published_at"=>Time.parse("Tue, 03 Nov 2015"),
-  "quantity"=>1,
+  "quantity"=>3,
   "book_category_id"=>1,
   "borrowed_quantity"=>0},
  {
@@ -60,7 +60,7 @@ arr = [
   "cover"=>'http://ecx.images-amazon.com/images/I/51p4CmIu23L.jpg',
   "publishing_house"=>"JiaHu Books",
   "published_at"=>Time.parse("Fri, 02 Jan 2015"),
-  "quantity"=>1,
+  "quantity"=>2,
   "book_category_id"=>1,
   "borrowed_quantity"=>0},
  {
@@ -82,7 +82,7 @@ arr = [
   "cover"=>'http://ecx.images-amazon.com/images/I/51419-L6ZDL.jpg',
   "publishing_house"=>"HarperCollins",
   "published_at"=>Time.parse("Tue, 01 Sep 2015"),
-  "quantity"=>1,
+  "quantity"=>2,
   "book_category_id"=>1,
   "borrowed_quantity"=>0},
  {
@@ -93,7 +93,7 @@ arr = [
   "cover"=>'http://ecx.images-amazon.com/images/I/61jsO3IwgVL.jpg',
   "publishing_house"=>"Anchor",
   "published_at"=>Time.parse("Tue, 28 Oct 2014"),
-  "quantity"=>1,
+  "quantity"=>2,
   "book_category_id"=>1,
   "borrowed_quantity"=>0}
 ]
