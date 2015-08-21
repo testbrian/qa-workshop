@@ -3,6 +3,4 @@
   =current_user.cart.books.size
   )
 
-
-- current_user.cart.books.each do |book|
-  = render book
+= render 'shared/books_block', books: current_user.cart.books
