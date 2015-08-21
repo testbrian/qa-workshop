@@ -1,7 +1,22 @@
 .panel.panel-info
-  .panel-heading Your cart
+  .panel-heading
+    %h3.panel-title Your cart
   .panel-body
     .list-group
       .list-group-item
         .row-picture
-          %img.circle{ src: 'http://lorempixel.com/200/200' }
+          %img.circle{ src: 'http://lorempixel.com/40/40' }
+        .row-content
+          %h4.list-group-item-heading Book title
+          %p.list-group-item-text Description
+
+      .list-group-separator
+
+      .list-group-item
+        .row-picture
+          %img.circle{ src: 'http://lorempixel.com/40/40' }
+        .row-content
+          %h4.list-group-item-heading Book title
+          %p.list-group-item-text Description
+    .sidebar__cart__buttons
+      %button.btn.btn-success Order now
