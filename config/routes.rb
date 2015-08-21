@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :contact_requests, only: [:new, :create]
+  resources :orders
 end
