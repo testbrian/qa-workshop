@@ -2,6 +2,7 @@ class ContactRequestsController < ApplicationController
   expose(:contact_request)
 
   def create
+    fail TooBig if contact_request_params[:text].size > 100
     ContactRequest.new(contact_request_params).save
     redirect_to root_path
   end
