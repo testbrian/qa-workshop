@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
 
   has_one :cart, dependent: :destroy
+  has_many :orders
 
   private
   def create_cart_if_needed
