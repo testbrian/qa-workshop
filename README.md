@@ -12,3 +12,7 @@ It's also possible to write some automated tests.
 
 `rspec`
 (Install firefox)
+
+## Admin(Librarian)
+user: admin@example.com
+pw:   password
