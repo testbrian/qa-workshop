@@ -1,9 +1,9 @@
-- 6.times do
+- books.each do |book|
   .book.panel.panel-default
     .panel-heading
-      %h3.panel-title.book__title Book title
+      %h3.panel-title.book__title= book.title
     .panel-body
-      = image_tag('http://lorempixel.com/200/200', class: 'book__cover')
-      .book__description Some description
+      = image_tag(book.cover, class: 'book__cover')
+      .book__description= book.description
     .panel-footer.text-center
       %button.btn.btn-success Order
