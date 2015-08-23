@@ -57,6 +57,7 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    breadcrumbs_on_rails (2.3.1)
     builder (3.2.2)
     byebug (6.0.2)
     capybara (2.4.4)
@@ -338,6 +339,7 @@ DEPENDENCIES
   better_errors
   bootstrap-material-design
   bootstrap-sass
+  breadcrumbs_on_rails
   byebug
   capybara
   capybara-screenshot

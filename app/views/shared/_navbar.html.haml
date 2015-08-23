@@ -8,18 +8,31 @@
       = link_to 'Modern Library', root_path, class: 'navbar-brand'
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav
-        %li= link_to 'About', root_path
-        %li= link_to 'Your shelf', carts_path
-        %li= link_to 'Orders', orders_path
+        %li= link_to 'About us', root_path
         %li= link_to 'Saerch', '#'
         %li= link_to 'Contact', new_contact_request_path
 
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
-            .navbar__greeting
+            = link_to '#', data: { target: '#', toggle: 'dropdown' }, class: 'dropdown-toggle' do
               Hi, #{current_user.email}
-          %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                = link_to orders_path do
+                  %i.text-muted.glyphicon.glyphicon-book
+                  Your bookshelf
+              %li
+                = link_to carts_path do
+                  %i.text-muted.glyphicon.glyphicon-shopping-cart
+                  Your orders
+              %li
+                = link_to destroy_user_session_path, method: :delete do
+                  %i.text-muted.glyphicon.glyphicon-log-out
+                  Sign out
+
+          %li
           - if current_user.try :admin?
             %li= link_to 'Admin', admin_index_url
         - else

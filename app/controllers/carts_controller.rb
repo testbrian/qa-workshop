@@ -3,6 +3,10 @@ class CartsController < ApplicationController
   respond_to :json
   expose(:book)
 
+  def index
+    add_breadcrumb 'Your bookshelf', carts_path
+  end
+
   def add_book
     book.update(borrowed_quantity: book.borrowed_quantity + 1)
     current_user.cart.books << book

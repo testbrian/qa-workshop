@@ -5,12 +5,14 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+    add_breadcrumb 'Orders', orders_path
     @orders = current_user.orders
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    add_breadcrumb 'Orders', orders_path
   end
 
   # POST /orders

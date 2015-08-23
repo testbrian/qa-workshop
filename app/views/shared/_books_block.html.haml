@@ -10,12 +10,8 @@
             %h4.book__title= book.title
             = book.short_description
         .panel-footer.text-center
-          - if book.available_quantity < 1
-            .label.label-danger Not available
-          - elsif book.available_quantity < 2
-            .label.label-warning #{book.available_quantity} book left
-          - elsif book.available_quantity >= 2
-            .label.label-success #{book.available_quantity} books left
+          - if current_user.try(:cart)
+            = book.books_left
           - if current_user.try(:cart)
             - if book.status
               = link_to 'Add to shelf', add_book_cart_path(current_user.cart, book_id: book.id), method: :post,
@@ -25,13 +21,5 @@
           - else
             %button.btn.btn-danger Sign in
 
-.text-center
-  %ul.pagination
-    %li.disabled= link_to '«', '#'
-    %li.active= link_to '1', '#'
-    %li= link_to '2', '#'
-    %li= link_to '3', '#'
-    %li= link_to '4', '#'
-    %li= link_to '5', '#'
-    %li= link_to '6', '#'
-    %li= link_to '»', '#'
+-# .text-center
+-#   = paginate @books

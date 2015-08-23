@@ -26,6 +26,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-material-design'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'breadcrumbs_on_rails'
+gem 'kaminari'
 
 group :production do
   gem 'rails_12factor'
